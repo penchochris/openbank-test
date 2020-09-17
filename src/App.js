@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ProductInformation from "./views/ProductInformation";
+import Feedback from "./views/Feedback";
+import Form from "./views/PasswordForm";
+import Stepper from "./components/Stepper";
+import { default as PaperMui } from "@material-ui/core/Paper";
 
-function App() {
+import "./App.scss";
+
+export function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PaperMui className="App__paper">
+        <Stepper title="Crea tu Password Manager">
+          <ProductInformation />
+          <Form />
+          <Feedback />
+        </Stepper>
+      </PaperMui>
     </div>
   );
 }

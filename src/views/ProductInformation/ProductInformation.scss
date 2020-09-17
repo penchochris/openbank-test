@@ -1,0 +1,22 @@
+.product-information {
+  display: flex;
+  flex-direction: column;
+  
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+
+  &__info-text {
+    text-align: center;
+  }
+}
