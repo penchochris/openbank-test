@@ -1,0 +1,5 @@
+export const TYPES = {
+  SET_STEP: 'SET_STEP',
+  SET_STATUS: 'SET_STATUS',
+  ON_SUBMIT_SAGA: 'ON_SUBMIT_SAGA'
+};

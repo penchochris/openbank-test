@@ -1,35 +1,55 @@
-import React, { useState } from "react";
+import React from 'react';
 
-import { default as StepperMui } from "@material-ui/core/Stepper";
-import { default as StepMui } from "@material-ui/core/Step";
-import { default as StepLabelMui } from "@material-ui/core/StepLabel";
-import { default as ButtonMui } from "@material-ui/core/Button";
+import { default as StepperMui } from '@material-ui/core/Stepper';
+import { default as StepMui } from '@material-ui/core/Step';
+import { default as StepLabelMui } from '@material-ui/core/StepLabel';
+import { default as ButtonMui } from '@material-ui/core/Button';
 
-export default function Stepper2(props) {
-  const childrenArray = React.Children.toArray(props.children);
-  const [step, setStep] = useState(1);
-  const currentChild = childrenArray[step];
+const Stepper = ({
+  children,
+  title,
+  handleNext,
+  nextText,
+  handleBack,
+  backText,
+  activeStep,
+  submitStep,
+  handleSubmitNext,
+}) => {
+  const childrenArray = React.Children.toArray(children);
+
+  const currentChild = childrenArray[activeStep];
   const steps = [];
 
   for (let i = 0; i < childrenArray.length; i++) {
     steps.push(
-      <StepMui key={i} completed={step > i}>
+      <StepMui key={i} completed={activeStep > i}>
         <StepLabelMui />
       </StepMui>
     );
   }
 
   return (
-    <div>
-      <h1>{props.title && props.title}</h1>
-      <StepperMui alternativeLabel activeStep={step}>
+    <div className="stepper">
+      <StepperMui alternativeLabel activeStep={activeStep}>
         {steps}
       </StepperMui>
+      <h1>{title}</h1>
       {currentChild}
-      <div>
-        <ButtonMui onClick={() => setStep((s) => s + 1)}>Next</ButtonMui>
-        <ButtonMui onClick={() => setStep((s) => s - 1)}>Back</ButtonMui>
+      <div className="stepper__buttons">
+        {activeStep > 0 && (
+          <ButtonMui onClick={handleBack}>{backText}</ButtonMui>
+        )}
+        {activeStep < childrenArray.length - 1 && (
+          <ButtonMui
+            onClick={activeStep === submitStep ? handleSubmitNext : handleNext}
+          >
+            {nextText}
+          </ButtonMui>
+        )}
       </div>
     </div>
   );
-}
+};
+
+export default Stepper;

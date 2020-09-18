@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Visibility, VisibilityOff } from "@material-ui/icons";
+import React, { useState } from 'react';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 export default function InputPassword({ handleChange }) {
-  
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => {
-    setShowPassword((showPassword) => !showPassword);
+    setShowPassword(showPassword => !showPassword);
   };
 
   return (
@@ -14,7 +13,7 @@ export default function InputPassword({ handleChange }) {
       <input
         onChange={handleChange}
         className="password-form__input"
-        type={showPassword ? "text" : "password"}
+        type={showPassword ? 'text' : 'password'}
       />
       {showPassword ? (
         <VisibilityOff

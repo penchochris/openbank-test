@@ -1,22 +1,16 @@
-import React from "react";
-import ProductInformation from "./views/ProductInformation";
-import Feedback from "./views/Feedback";
-import Form from "./views/PasswordForm";
-import Stepper from "./components/Stepper";
-import { default as PaperMui } from "@material-ui/core/Paper";
+import React from 'react';
+import { Provider } from 'react-redux';
+import Store from 'store/store';
+import 'App.scss';
 
-import "./App.scss";
+import PasswordManager from 'views/PasswordManager';
 
 export function App() {
   return (
     <div className="App">
-      <PaperMui className="App__paper">
-        <Stepper title="Crea tu Password Manager">
-          <ProductInformation />
-          <Form />
-          <Feedback />
-        </Stepper>
-      </PaperMui>
+      <Provider store={Store}>
+        <PasswordManager />
+      </Provider>
     </div>
   );
 }

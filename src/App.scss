@@ -1,16 +1,9 @@
-@import "styles/base";
+@import 'styles/base';
 
 .App {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $secondary-color;
   background-color: $terciary-color;
   height: 100vh;
-
-  &__paper {
-    width: 70%;
-    margin: 20px;
-    padding: 20px;
-  }
 }
