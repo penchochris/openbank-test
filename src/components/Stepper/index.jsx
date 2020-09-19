@@ -23,7 +23,9 @@ const Stepper = ({ children, title, activeStep }) => {
 
   return (
     <div className="stepper">
-      <div className="stepper__stepper">
+      {
+        activeStep !== 2 &&
+        <div className="stepper__stepper">
         <StepperMui
           alternativeLabel
           activeStep={activeStep}
@@ -31,7 +33,7 @@ const Stepper = ({ children, title, activeStep }) => {
         >
           {steps}
         </StepperMui>
-      </div>
+      </div>}
       <div className="stepper__content">
         <h1>{title}</h1>
         {currentChild}

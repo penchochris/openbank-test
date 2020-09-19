@@ -20,14 +20,14 @@ const PasswordManager = () => {
     dispatch(setStep(step + 1));
   };
 
-  const handlePrevious = () => {
-    dispatch(setStep(step - 1));
+  const handleCancel = () => {
+    dispatch(setStep(0));
   };
 
   const formRef = useRef();
 
   const handleSubmit = form =>
-    submitForm('K')
+    submitForm('OK')
       .then(data => {
         const { status } = data;
         dispatch(onSubmitSaga({ status, step }));
@@ -59,13 +59,9 @@ const PasswordManager = () => {
       </Stepper>
       <StepperButtons
         activeStep={step}
-        submitStep={1}
-        backText="Cancelar"
-        nextText="Siguiente"
-        handleBack={handlePrevious}
+        handleCancel={handleCancel}
         handleNext={handleNext}
-        handleSubmitNext={handleSubmitNext}
-        elementsLength={3}
+        handleSubmit={handleSubmitNext}
       />
     </div>
   );

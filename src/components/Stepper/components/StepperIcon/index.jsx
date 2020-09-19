@@ -5,15 +5,15 @@ import { COLORS } from 'consts';
 const StepperIcon = withStyles({
   root: {
     color: COLORS.darkGrey,
-    "&$active": {
+    '&$active': {
       color: COLORS.secondaryColor,
     },
-    "&$completed": {
-      color: "red"
-    }
+    '&$completed': {
+      color: 'red',
+    },
   },
   active: {},
-  completed: {}
+  completed: {},
 })(StepIcon);
 
 export default StepperIcon;

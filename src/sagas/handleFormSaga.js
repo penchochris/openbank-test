@@ -6,6 +6,7 @@ import { setStatus, setStep } from 'actions/PasswordManagerActions';
 function* onSubmitSaga(action) {
   const { step, status } = action.values;
 
+  console.log(status)
   yield put(setStatus(status));
   yield put(setStep(step + 1));
 }

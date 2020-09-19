@@ -1,5 +1,5 @@
 import React from 'react';
-import './ButtonCustom.scss'
+import './ButtonCustom.scss';
 const ButtonCustom = ({
   color,
   background,
@@ -21,11 +21,15 @@ const ButtonCustom = ({
   };
 
   return (
-    <button onClick={handleOnClick} className={`button-custom ${backgroundClasses[background]} ${colorClasses[color]}`}>
+    <button
+      type="button"
+      onClick={handleOnClick}
+      className={`button-custom ${backgroundClasses[background]} ${colorClasses[color]}`}
+    >
       <p>{text}</p>
       <span className="button-custom__icon">{iconComponent}</span>
     </button>
   );
-}
+};
 
 export default ButtonCustom;
