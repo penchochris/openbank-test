@@ -1,0 +1,52 @@
+@import 'styles/base';
+
+.button-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 5px;
+  min-width: 100px;
+  padding-right: 25px;
+  border: none;
+  outline:none;
+  cursor: pointer;
+  font-weight: bold;
+
+  
+  &__icon {
+    display: flex;
+    position: absolute;
+    right: 6px;
+    padding-top: 2px;
+  }
+
+  &__background {
+    &-primary {
+      background-color: $primary-color;
+    }
+    &-secondary {
+      background-color: $secondary-color;
+    }
+    &-terciary {
+      background-color: $terciary-color;
+    }
+    &-white {
+      background-color: $white;
+    }
+  }
+  &__color {
+    &-primary {
+      color: $primary-color;
+    }
+    &-secondary {
+      color: $secondary-color;
+    }
+    &-terciary {
+      color: $terciary-color;
+    }
+    &-white {
+      color: $white;
+    }
+  }
+}

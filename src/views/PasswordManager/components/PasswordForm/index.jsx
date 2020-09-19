@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import InputPassword from 'components/InputPassword';
+import InputPassword from 'components/Forms/Inputs/InputPassword';
 import * as yup from 'yup';
 
 import './PasswordForm.scss';

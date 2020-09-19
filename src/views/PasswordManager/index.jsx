@@ -10,6 +10,7 @@ import { onSubmitSaga } from '../../actions/PasswordManagerActions';
 import { submitForm } from 'services/api';
 
 import './PasswordManager.scss';
+import StepperButtons from '../../components/Stepper/components/StepperButtons';
 
 const PasswordManager = () => {
   const dispatch = useDispatch();
@@ -46,13 +47,7 @@ const PasswordManager = () => {
     <div className="password-manager">
       <Stepper
         title="Crea tu Password Manager"
-        handleNext={handleNext}
-        nextText={'next'}
-        handleBack={handlePrevious}
-        backText={'back'}
         activeStep={step}
-        submitStep={1}
-        handleSubmitNext={handleSubmitNext}
       >
         <ProductInformation />
         <Form
@@ -62,6 +57,16 @@ const PasswordManager = () => {
         />
         <Feedback />
       </Stepper>
+      <StepperButtons
+        activeStep={step}
+        submitStep={1}
+        backText="Cancelar"
+        nextText="Siguiente"
+        handleBack={handlePrevious}
+        handleNext={handleNext}
+        handleSubmitNext={handleSubmitNext}
+        elementsLength={3}
+      />
     </div>
   );
 };
