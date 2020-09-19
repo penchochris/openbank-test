@@ -1,20 +1,25 @@
 import React, { useRef } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
+import { onSubmitSaga } from '../../actions/PasswordManagerActions';
+import { setStep } from 'actions/PasswordManagerActions';
+
 import ProductInformation from './components/ProductInformation';
 import Feedback from './components/Feedback';
 import Form from './components/PasswordForm';
 import Stepper from 'components/Stepper';
-import { setStep } from 'actions/PasswordManagerActions';
-import { onSubmitSaga } from '../../actions/PasswordManagerActions';
+import StepperButtons from '../../components/Stepper/components/StepperButtons';
 
 import { submitForm } from 'services/api';
+import { useTranslation } from 'react-i18next';
 
 import './PasswordManager.scss';
-import StepperButtons from '../../components/Stepper/components/StepperButtons';
 
 const PasswordManager = () => {
   const dispatch = useDispatch();
   const { step } = useSelector(state => state.form);
+  
+  const { t } = useTranslation(['stepper']);
 
   const handleNext = () => {
     dispatch(setStep(step + 1));
@@ -26,6 +31,7 @@ const PasswordManager = () => {
 
   const formRef = useRef();
 
+  // Here we should make a real API call with the form info.
   const handleSubmit = form =>
     submitForm('OK')
       .then(data => {
@@ -46,7 +52,7 @@ const PasswordManager = () => {
   return (
     <div className="password-manager">
       <Stepper
-        title="Crea tu Password Manager"
+        title={t('stepper.title')}
         activeStep={step}
       >
         <ProductInformation />
