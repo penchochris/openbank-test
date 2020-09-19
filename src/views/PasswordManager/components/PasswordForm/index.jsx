@@ -9,8 +9,8 @@ const PasswordForm = ({ formRef, handleSubmit, handleChange }) => (
   <div className="password-form">
     <p>
       En primer lugar, debes crear una contraseña diferente para sus
-      pertenencias electronicas. No podras recuperar tu contraseña, asi que
-      recuerdela bien.
+      pertenencias electrónicas. No podrás recuperar tu contraseña, así que
+      recuérdela bien.
     </p>
     <Formik
       innerRef={formRef}
@@ -55,7 +55,7 @@ const PasswordForm = ({ formRef, handleSubmit, handleChange }) => (
           </div>
         </div>
         <div>
-          Tambien puedes crear una pista que te ayude a recordar tu contraseña
+          También puedes crear una pista que te ayude a recordar tu contraseña
           maestra.
         </div>
         <div className="password-form__hint">

@@ -23,17 +23,17 @@ const Stepper = ({ children, title, activeStep }) => {
 
   return (
     <div className="stepper">
-      {
-        activeStep !== 2 &&
+      {activeStep !== 2 && (
         <div className="stepper__stepper">
-        <StepperMui
-          alternativeLabel
-          activeStep={activeStep}
-          connector={<StepperConnector />}
-        >
-          {steps}
-        </StepperMui>
-      </div>}
+          <StepperMui
+            alternativeLabel
+            activeStep={activeStep}
+            connector={<StepperConnector />}
+          >
+            {steps}
+          </StepperMui>
+        </div>
+      )}
       <div className="stepper__content">
         <h1>{title}</h1>
         {currentChild}

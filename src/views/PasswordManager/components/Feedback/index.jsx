@@ -11,14 +11,22 @@ export default function Feedback() {
         {status === 200 ? <CheckCircleOutlined /> : <ErrorOutlineOutlined />}
       </div>
       {status === 200 ? (
-        <h2>Tu Password Manager ya esta creado!</h2>
+        <>
+          <h2>¡Tu Password Manager ya está creado!</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </>
       ) : (
-        <h2>Ha habido un error</h2>
+        <>
+          <h2>Ha habido un error</h2>
+          <p>
+            No hemos podido modificar tu Contraseña Maestra, inténtalo más
+            tarde.
+          </p>
+        </>
       )}
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
     </div>
   );
 }
