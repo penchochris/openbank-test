@@ -65,6 +65,8 @@ const PasswordForm = ({ formRef, handleSubmit, handleChange }) => (
             <ErrorMessage name="hint" />
           </div>
         </div>
+        {/*Makes user able to submit with enter:*/}
+        <input type="submit" style={{ visibility: 'hidden' }} />
       </Form>
     </Formik>
   </div>
