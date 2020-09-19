@@ -4,6 +4,9 @@ import { default as StepperMui } from '@material-ui/core/Stepper';
 import { default as StepMui } from '@material-ui/core/Step';
 import { default as StepLabelMui } from '@material-ui/core/StepLabel';
 
+import StepperConnector from './components/StepperConnector';
+import StepperIcon from './components/StepperIcon';
+
 const Stepper = ({
   children,
   title,
@@ -17,14 +20,14 @@ const Stepper = ({
   for (let i = 0; i < childrenArray.length; i++) {
     steps.push(
       <StepMui key={i} completed={activeStep > i}>
-        <StepLabelMui />
+        <StepLabelMui StepIconComponent={StepperIcon}/>
       </StepMui>
     );
   }
 
   return (
     <div className="stepper">
-      <StepperMui alternativeLabel activeStep={activeStep}>
+      <StepperMui alternativeLabel activeStep={activeStep} connector={<StepperConnector />} >
         {steps}
       </StepperMui>
       <h1>{title}</h1>
