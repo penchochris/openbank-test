@@ -1,7 +1,7 @@
 import { TYPES } from 'consts';
 
 const initialState = {
-  step: 2,
+  step: 0,
   status: 0,
 };
 

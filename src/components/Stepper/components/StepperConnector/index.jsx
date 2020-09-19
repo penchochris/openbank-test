@@ -19,7 +19,7 @@ const StepperConnector = withStyles({
     },
   },
   line: {
-    borderColor: COLORS.darkGray,
+    borderColor: COLORS.darkGrey,
     borderTopWidth: 3,
     borderRadius: 1,
   },

@@ -9,6 +9,7 @@ export const COLORS = {
   secondaryColor: '#002b45',
   terciaryColor: '#ccd5da',
   darkGrey: '#788F9C',
+  darkerGrey: '#CCD5DA',
   white: '#ffffff',
   black: '#000000',
 };
