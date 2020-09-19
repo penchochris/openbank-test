@@ -66,7 +66,7 @@ const PasswordForm = ({ formRef, handleSubmit, handleChange }) => (
           </div>
         </div>
         {/*Makes user able to submit with enter:*/}
-        <input type="submit" style={{ visibility: 'hidden' }} />
+        <input type="submit" hidden />
       </Form>
     </Formik>
   </div>
